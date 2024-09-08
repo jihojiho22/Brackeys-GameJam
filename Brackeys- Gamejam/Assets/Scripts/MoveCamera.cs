@@ -27,16 +27,10 @@ public class MoveCamera : MonoBehaviour
         if (target == null)
             return;
 
-        // Calculate the desired position
+   
         Vector3 desiredPosition = target.position + offset;
-
-        // Smoothly move the camera towards the desired position
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-        // Update the camera's position
         transform.position = smoothedPosition;
-
-        // Make the camera look at the player
         transform.LookAt(target);
     }
 }
